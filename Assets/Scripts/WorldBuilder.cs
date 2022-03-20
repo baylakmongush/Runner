@@ -14,12 +14,8 @@ public class WorldBuilder : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            var position = (!_last) ? parent.position : _last.position;
-            GameObject ll = Instantiate(platform[0], position, Quaternion.identity, parent);
-            Debug.Log(ll.transform.GetChild(1).position);
-            _last = ll.transform.GetChild(1);
-        }
+        var        position = (!_last) ? parent.position : _last.position;
+        GameObject ll       = Instantiate(platform[0], position, Quaternion.identity, parent);
+        _last = ll.transform.GetChild(1);
     }
 }
